@@ -11,7 +11,7 @@ const AdminRegister = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:5000/api/admin/register", { name, email, password });
+      const { data } = await axios.post("https://intern-management-system-1.onrender.com/api/admin/register", { name, email, password });
       alert("Admin Registered Successfully");
       navigate("/admin/login"); // Redirect to login after successful registration
     } catch (error) {

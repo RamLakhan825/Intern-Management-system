@@ -17,19 +17,19 @@ const ManageTasks = () => {
 
   // Fetch interns
   const fetchInterns = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/interns", config);
+    const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/interns", config);
     setInterns(data);
   };
 
   // Fetch projects
   const fetchProjects = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/projects", config);
+    const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/projects", config);
     setProjects(data);
   };
 
   // Fetch tasks
   const fetchTasks = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/tasks", config);
+    const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/tasks", config);
     setTasks(data);
   };
 
@@ -44,7 +44,7 @@ const ManageTasks = () => {
     try {
       const internIds = assignedTo.map(i => i.value);
       const { data } = await axios.post(
-        "http://localhost:5000/api/tasks",
+        "https://intern-management-system-1.onrender.com/api/tasks",
         { title, description, assignedTo: internIds, dueDate, projectId: selectedProject },
         config
       );
@@ -56,7 +56,7 @@ const ManageTasks = () => {
   };
 
   const deleteTask = async (id) => {
-    await axios.delete(`http://localhost:5000/api/tasks/${id}`, config);
+    await axios.delete(`https://intern-management-system-1.onrender.com/api/tasks/${id}`, config);
     setTasks(tasks.filter(t => t._id !== id));
   };
 

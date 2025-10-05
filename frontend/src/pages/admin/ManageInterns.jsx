@@ -14,7 +14,7 @@ const ManageInterns = () => {
 
   const fetchInterns = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/interns", config);
+      const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/interns", config);
       setInterns(data);
     } catch (error) {
       console.log(error);
@@ -29,7 +29,7 @@ const ManageInterns = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/interns",
+        "https://intern-management-system-1.onrender.com/api/interns",
         { name, email, password, skills: skills.split(",") },
         config
       );
@@ -42,7 +42,7 @@ const ManageInterns = () => {
 
   const deleteIntern = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/interns/${id}`, config);
+      await axios.delete(`https://intern-management-system-1.onrender.com/api/interns/${id}`, config);
       setInterns(interns.filter(i => i._id !== id));
     } catch (error) {
       console.log(error);

@@ -14,12 +14,12 @@ const ManageExams = () => {
 
   // Fetch interns
   const fetchInterns = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/interns", config);
+    const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/interns", config);
     setInterns(data);
   };
 
   const fetchExams = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/exams", config);
+    const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/exams", config);
     setExams(data);
   };
 
@@ -33,7 +33,7 @@ const ManageExams = () => {
     try {
       const internIds = assignedTo.map(i => i.value);
       const { data } = await axios.post(
-        "http://localhost:5000/api/exams",
+        "https://intern-management-system-1.onrender.com/api/exams",
         { title, topic, internIds },
         config
       );

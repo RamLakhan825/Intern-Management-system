@@ -22,7 +22,7 @@ const TakeExam = () => {
     setError(null);
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/intern/exams/${examId}`,
+        `https://intern-management-system-1.onrender.com/api/intern/exams/${examId}`,
         config
       );
       setExam(data);
@@ -61,7 +61,7 @@ const TakeExam = () => {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/api/intern/exams/${exam._id}/submit`,
+        `https://intern-management-system-1.onrender.com/api/intern/exams/${exam._id}/submit`,
         { answers: answerArray },
         config
       );

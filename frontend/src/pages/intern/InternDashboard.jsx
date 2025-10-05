@@ -23,7 +23,7 @@ const InternDashboard = () => {
   // Fetch functions
   const fetchTasks = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/intern/tasks", config);
+      const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/intern/tasks", config);
       setTasks(data);
     } catch (err) {
       console.error(err);
@@ -32,7 +32,7 @@ const InternDashboard = () => {
 
   const fetchProjects = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/intern/projects", config);
+      const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/intern/projects", config);
       setProjects(data);
     } catch (err) {
       console.error(err);
@@ -41,7 +41,7 @@ const InternDashboard = () => {
 
   const fetchExams = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/intern/exams", config);
+      const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/intern/exams", config);
       setExams(data);
     } catch (err) {
       console.error(err);
@@ -50,7 +50,7 @@ const InternDashboard = () => {
 
   const fetchResources = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/intern/resources", config);
+      const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/intern/resources", config);
       setResources(data);
     } catch (err) {
       console.error(err);
@@ -67,7 +67,7 @@ const InternDashboard = () => {
   // Mark task complete
   const markTaskComplete = async (taskId) => {
     try {
-      await axios.put(`http://localhost:5000/api/intern/tasks/${taskId}/complete`, {}, config);
+      await axios.put(`https://intern-management-system-1.onrender.com/api/intern/tasks/${taskId}/complete`, {}, config);
       setTasks((prev) =>
         prev.map((t) => (t._id === taskId ? { ...t, status: "completed" } : t))
       );

@@ -21,7 +21,7 @@ const AdminDashboard = () => {
   // Fetch resources
   const fetchResources = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/admin/resources", config);
+      const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/admin/resources", config);
       setResources(data);
     } catch (err) {
       console.error("Error fetching resources:", err);
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
     if (file) formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:5000/api/admin/resources", formData, {
+      await axios.post("https://intern-management-system-1.onrender.com/api/admin/resources", formData, {
         headers: { ...config.headers, "Content-Type": "multipart/form-data" },
       });
       setTitle("");
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
   const handleDeleteResource = async (id) => {
     if (!window.confirm("Are you sure you want to delete this resource?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/resources/${id}`, config);
+      await axios.delete(`https://intern-management-system-1.onrender.com/api/admin/resources/${id}`, config);
       fetchResources();
     } catch (err) {
       console.error("Error deleting resource:", err);

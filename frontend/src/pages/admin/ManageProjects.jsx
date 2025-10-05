@@ -14,7 +14,7 @@ const ManageProjects = () => {
   // Fetch interns
   const fetchInterns = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/interns", config);
+      const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/interns", config);
       setInterns(data);
     } catch (error) {
       console.log(error);
@@ -24,7 +24,7 @@ const ManageProjects = () => {
   // Fetch projects
   const fetchProjects = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/projects", config);
+      const { data } = await axios.get("https://intern-management-system-1.onrender.com/api/projects", config);
       setProjects(data);
     } catch (error) {
       console.log(error);
@@ -40,7 +40,7 @@ const ManageProjects = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/projects",
+        "https://intern-management-system-1.onrender.com/api/projects",
         { title, description, internIds: selectedInterns },
         config
       );
@@ -53,7 +53,7 @@ const ManageProjects = () => {
 
   const deleteProject = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`, config);
+      await axios.delete(`https://intern-management-system-1.onrender.com/api/projects/${id}`, config);
       setProjects(projects.filter(p => p._id !== id));
     } catch (error) {
       console.log(error);

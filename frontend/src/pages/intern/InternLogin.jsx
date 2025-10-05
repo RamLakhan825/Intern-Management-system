@@ -10,7 +10,7 @@ const InternLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:5000/api/intern/auth/login", { email, password });
+      const { data } = await axios.post("https://intern-management-system-1.onrender.com/api/intern/auth/login", { email, password });
       localStorage.setItem("internToken", data.token);
       localStorage.setItem("internName", data.intern.name);
       navigate("/intern/dashboard");
